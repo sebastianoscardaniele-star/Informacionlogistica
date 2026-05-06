@@ -1,42 +1,37 @@
-# Sellers BNA, Macro y demás tiendas
+# Sellers App - Vite con deploy rápido en Vercel
 
-Aplicación React/Vite para visualizar y editar la información de sellers separada por marca: BNA, Macro y demás tiendas.
+Este ZIP incluye el proyecto Vite y también la carpeta `dist` ya compilada.
 
-## Funcionalidades
+## Configuración recomendada en Vercel
 
-- Selección por marca: BNA / Macro.
-- Listado de sellers con buscador.
-- Un click sobre un seller muestra toda su información.
-- Todos los campos son editables.
-- Guardado local automático en el navegador.
-- Alta y eliminación de sellers.
-- Exportación e importación de datos en JSON.
-- Restauración de datos originales del Excel.
+- Framework Preset: Other
+- Install Command: `echo skip install`
+- Build Command: `echo using prebuilt dist`
+- Output Directory: `dist`
 
-## Ejecutar localmente
+El archivo `vercel.json` ya trae esa configuración, para evitar que Vercel quede trabado en `npm install` o `npm ci`.
+
+## Para editar localmente
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Publicar en Vercel
+Para regenerar el build local:
 
-1. Subí esta carpeta a un repositorio de GitHub.
-2. En Vercel, elegí **Add New Project**.
-3. Importá el repo.
-4. Vercel detectará Vite automáticamente.
-5. Build command: `npm run build`.
-6. Output directory: `dist`.
+```bash
+npm run build
+```
 
-## Importante
+## Funcionalidades
 
-Los datos iniciales vienen del archivo Excel original y quedan embebidos en `src/data.js`. Los cambios que haga cada usuario se guardan localmente en su navegador mediante `localStorage`.
-
-
-## Tiendas incluidas
-- BNA: 346 sellers
-- Macro: 163 sellers
-- Comafi: 43 sellers
-- Ciudad: 43 sellers
-- MasBanco: 44 sellers
+- Tiendas separadas por solapa: BNA, Macro y demás tiendas cargadas.
+- Estado editable con desplegable.
+- Datos del seller editables.
+- Operadores logísticos con checks editables.
+- Forma de envío editable.
+- Configuración logística editable.
+- Datos de depósito editables.
+- Direcciones de retiro por sucursal editables.
+- Exportación a XLSX desde el navegador.
